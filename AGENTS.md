@@ -4,7 +4,7 @@ Read `art/queue.json` and `art/STYLE.md` on each fresh OpenTeam chat's first tas
 
 PREPARER: select the first pending batch (batch 01 only for pilot) and make one short high-quality 2x2 generation prompt. Pass batch ID, descriptions and technical requirements onward.
 
-GENERATOR: invoke actual ChatGPT image generation. Transfer original image BYTES, not text, to EXTRACTOR; if unable, report BLOCKED_TRANSPORT.
+GENERATOR: request a **brand-new text-to-image creation**. Do not supply, open, or attach any existing placeholder PNG, old asset sheet, or repository artwork as a source image during Batch 01. Use a self-contained visual-only prompt; do not frame the request as an image edit, replacement, reference-based transformation, or crop. For a mode-classification tool error, retry once using `art/prompts/batch-01-fresh-image.txt` verbatim in a clean generator turn, with no prior image attached. If the same error recurs, report BLOCKED_GENERATION (not BLOCKED_TRANSPORT) with the actual error. Upon success, transfer original image BYTES to EXTRACTOR; if transfer fails report BLOCKED_TRANSPORT.
 
 EXTRACTOR: review real generated image quality; FAIL to GENERATOR for artistic errors. On PASS, execute Python/Pillow and produce four genuine transparent native-resolution PNGs at exact queue filenames and canvases. Transfer real files and preview to UPLOADER; if missing bytes report BLOCKED_TRANSPORT. Terrain requires seamless tiling tests.
 
