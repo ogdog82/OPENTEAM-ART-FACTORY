@@ -1,0 +1,1274 @@
+{
+  "schemaVersion": 1,
+  "repository": "ogdog82/OPENTEAM-ART-FACTORY",
+  "branch": "main",
+  "activeBatchId": "batch-01-broadleaf-trees",
+  "pilotOnly": true,
+  "statusAuthority": "This queue owns batch and asset statuses; preserve assets' path, canvas and anchor contracts.",
+  "batches": [
+    {
+      "id": "batch-01-broadleaf-trees",
+      "family": "broadleaf-trees",
+      "status": "pending",
+      "assets": [
+        {
+          "id": "broadleaf_trees_oak",
+          "name": "Mature oak tree",
+          "description": "Original mature oak tree for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "top-left",
+          "kind": "placeable",
+          "path": "public/art/broadleaf_trees_oak.png",
+          "canvas": {
+            "width": 112,
+            "height": 112
+          },
+          "anchor": {
+            "x": 56,
+            "y": 110,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "placeholder"
+        },
+        {
+          "id": "broadleaf_trees_ash",
+          "name": "Mature ash tree",
+          "description": "Original mature ash tree for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "top-right",
+          "kind": "placeable",
+          "path": "public/art/broadleaf_trees_ash.png",
+          "canvas": {
+            "width": 112,
+            "height": 112
+          },
+          "anchor": {
+            "x": 56,
+            "y": 110,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "placeholder"
+        },
+        {
+          "id": "broadleaf_trees_birch",
+          "name": "Slender birch tree",
+          "description": "Original slender birch tree for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "bottom-left",
+          "kind": "placeable",
+          "path": "public/art/broadleaf_trees_birch.png",
+          "canvas": {
+            "width": 80,
+            "height": 128
+          },
+          "anchor": {
+            "x": 40,
+            "y": 126,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "placeholder"
+        },
+        {
+          "id": "broadleaf_trees_maple",
+          "name": "Broad maple tree",
+          "description": "Original broad maple tree for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "bottom-right",
+          "kind": "placeable",
+          "path": "public/art/broadleaf_trees_maple.png",
+          "canvas": {
+            "width": 112,
+            "height": 112
+          },
+          "anchor": {
+            "x": 56,
+            "y": 110,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "placeholder"
+        }
+      ]
+    },
+    {
+      "id": "batch-02-evergreens",
+      "family": "evergreens",
+      "status": "planned",
+      "assets": [
+        {
+          "id": "evergreens_pine",
+          "name": "Layered pine tree",
+          "description": "Original layered pine tree for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "top-left",
+          "kind": "placeable",
+          "path": "public/art/evergreens_pine.png",
+          "canvas": {
+            "width": 80,
+            "height": 128
+          },
+          "anchor": {
+            "x": 40,
+            "y": 126,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "evergreens_fir",
+          "name": "Dense fir tree",
+          "description": "Original dense fir tree for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "top-right",
+          "kind": "placeable",
+          "path": "public/art/evergreens_fir.png",
+          "canvas": {
+            "width": 80,
+            "height": 128
+          },
+          "anchor": {
+            "x": 40,
+            "y": 126,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "evergreens_cedar",
+          "name": "Full cedar tree",
+          "description": "Original full cedar tree for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "bottom-left",
+          "kind": "placeable",
+          "path": "public/art/evergreens_cedar.png",
+          "canvas": {
+            "width": 96,
+            "height": 112
+          },
+          "anchor": {
+            "x": 48,
+            "y": 110,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "evergreens_cypress",
+          "name": "Tall cypress tree",
+          "description": "Original tall cypress tree for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "bottom-right",
+          "kind": "placeable",
+          "path": "public/art/evergreens_cypress.png",
+          "canvas": {
+            "width": 64,
+            "height": 128
+          },
+          "anchor": {
+            "x": 32,
+            "y": 126,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "id": "batch-03-shrubs",
+      "family": "shrubs",
+      "status": "planned",
+      "assets": [
+        {
+          "id": "shrubs_sapling",
+          "name": "Young sapling",
+          "description": "Original young sapling for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "top-left",
+          "kind": "placeable",
+          "path": "public/art/shrubs_sapling.png",
+          "canvas": {
+            "width": 64,
+            "height": 80
+          },
+          "anchor": {
+            "x": 32,
+            "y": 78,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "shrubs_hedge",
+          "name": "Trimmed hedge",
+          "description": "Original trimmed hedge for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "top-right",
+          "kind": "placeable",
+          "path": "public/art/shrubs_hedge.png",
+          "canvas": {
+            "width": 96,
+            "height": 48
+          },
+          "anchor": {
+            "x": 48,
+            "y": 46,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "shrubs_bush",
+          "name": "Leafy bush",
+          "description": "Original leafy bush for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "bottom-left",
+          "kind": "placeable",
+          "path": "public/art/shrubs_bush.png",
+          "canvas": {
+            "width": 64,
+            "height": 48
+          },
+          "anchor": {
+            "x": 32,
+            "y": 46,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "shrubs_flowering_bush",
+          "name": "Flowering bush",
+          "description": "Original flowering bush for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "bottom-right",
+          "kind": "placeable",
+          "path": "public/art/shrubs_flowering_bush.png",
+          "canvas": {
+            "width": 64,
+            "height": 48
+          },
+          "anchor": {
+            "x": 32,
+            "y": 46,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "id": "batch-04-vegetation",
+      "family": "vegetation",
+      "status": "planned",
+      "assets": [
+        {
+          "id": "vegetation_tall_grass",
+          "name": "Tall grass",
+          "description": "Original tall grass for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "top-left",
+          "kind": "placeable",
+          "path": "public/art/vegetation_tall_grass.png",
+          "canvas": {
+            "width": 32,
+            "height": 32
+          },
+          "anchor": {
+            "x": 16,
+            "y": 30,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "vegetation_fern",
+          "name": "Fern cluster",
+          "description": "Original fern cluster for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "top-right",
+          "kind": "placeable",
+          "path": "public/art/vegetation_fern.png",
+          "canvas": {
+            "width": 48,
+            "height": 48
+          },
+          "anchor": {
+            "x": 24,
+            "y": 46,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "vegetation_reeds",
+          "name": "Reeds",
+          "description": "Original reeds for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "bottom-left",
+          "kind": "placeable",
+          "path": "public/art/vegetation_reeds.png",
+          "canvas": {
+            "width": 48,
+            "height": 64
+          },
+          "anchor": {
+            "x": 24,
+            "y": 62,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "vegetation_mushrooms",
+          "name": "Mushroom cluster",
+          "description": "Original mushroom cluster for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "bottom-right",
+          "kind": "placeable",
+          "path": "public/art/vegetation_mushrooms.png",
+          "canvas": {
+            "width": 48,
+            "height": 32
+          },
+          "anchor": {
+            "x": 24,
+            "y": 30,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "id": "batch-05-rocks",
+      "family": "rocks",
+      "status": "planned",
+      "assets": [
+        {
+          "id": "rocks_small_rock",
+          "name": "Small rock",
+          "description": "Original small rock for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "top-left",
+          "kind": "placeable",
+          "path": "public/art/rocks_small_rock.png",
+          "canvas": {
+            "width": 32,
+            "height": 32
+          },
+          "anchor": {
+            "x": 16,
+            "y": 30,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "rocks_boulder",
+          "name": "Large boulder",
+          "description": "Original large boulder for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "top-right",
+          "kind": "placeable",
+          "path": "public/art/rocks_boulder.png",
+          "canvas": {
+            "width": 80,
+            "height": 64
+          },
+          "anchor": {
+            "x": 40,
+            "y": 62,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "rocks_rock_cluster",
+          "name": "Rock cluster",
+          "description": "Original rock cluster for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "bottom-left",
+          "kind": "placeable",
+          "path": "public/art/rocks_rock_cluster.png",
+          "canvas": {
+            "width": 80,
+            "height": 48
+          },
+          "anchor": {
+            "x": 40,
+            "y": 46,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "rocks_mossy_boulder",
+          "name": "Mossy boulder",
+          "description": "Original mossy boulder for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "bottom-right",
+          "kind": "placeable",
+          "path": "public/art/rocks_mossy_boulder.png",
+          "canvas": {
+            "width": 64,
+            "height": 48
+          },
+          "anchor": {
+            "x": 32,
+            "y": 46,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "id": "batch-06-woodland-debris",
+      "family": "woodland-debris",
+      "status": "planned",
+      "assets": [
+        {
+          "id": "woodland_debris_stump",
+          "name": "Tree stump",
+          "description": "Original tree stump for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "top-left",
+          "kind": "placeable",
+          "path": "public/art/woodland_debris_stump.png",
+          "canvas": {
+            "width": 48,
+            "height": 48
+          },
+          "anchor": {
+            "x": 24,
+            "y": 46,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "woodland_debris_fallen_log",
+          "name": "Fallen log",
+          "description": "Original fallen log for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "top-right",
+          "kind": "placeable",
+          "path": "public/art/woodland_debris_fallen_log.png",
+          "canvas": {
+            "width": 96,
+            "height": 48
+          },
+          "anchor": {
+            "x": 48,
+            "y": 46,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "woodland_debris_roots",
+          "name": "Exposed tree roots",
+          "description": "Original exposed tree roots for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "bottom-left",
+          "kind": "placeable",
+          "path": "public/art/woodland_debris_roots.png",
+          "canvas": {
+            "width": 64,
+            "height": 48
+          },
+          "anchor": {
+            "x": 32,
+            "y": 46,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "woodland_debris_branch_pile",
+          "name": "Branch pile",
+          "description": "Original branch pile for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "bottom-right",
+          "kind": "placeable",
+          "path": "public/art/woodland_debris_branch_pile.png",
+          "canvas": {
+            "width": 64,
+            "height": 48
+          },
+          "anchor": {
+            "x": 32,
+            "y": 46,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "id": "batch-07-gardens",
+      "family": "gardens",
+      "status": "planned",
+      "assets": [
+        {
+          "id": "gardens_flowerbed",
+          "name": "Flowerbed",
+          "description": "Original flowerbed for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "top-left",
+          "kind": "placeable",
+          "path": "public/art/gardens_flowerbed.png",
+          "canvas": {
+            "width": 96,
+            "height": 32
+          },
+          "anchor": {
+            "x": 48,
+            "y": 30,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "gardens_crops",
+          "name": "Crop patch",
+          "description": "Original crop patch for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "top-right",
+          "kind": "placeable",
+          "path": "public/art/gardens_crops.png",
+          "canvas": {
+            "width": 64,
+            "height": 48
+          },
+          "anchor": {
+            "x": 32,
+            "y": 46,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "gardens_planter",
+          "name": "Wooden planter",
+          "description": "Original wooden planter for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "bottom-left",
+          "kind": "placeable",
+          "path": "public/art/gardens_planter.png",
+          "canvas": {
+            "width": 64,
+            "height": 48
+          },
+          "anchor": {
+            "x": 32,
+            "y": 46,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "gardens_trellis",
+          "name": "Garden trellis",
+          "description": "Original garden trellis for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "bottom-right",
+          "kind": "placeable",
+          "path": "public/art/gardens_trellis.png",
+          "canvas": {
+            "width": 64,
+            "height": 96
+          },
+          "anchor": {
+            "x": 32,
+            "y": 94,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "id": "batch-08-signs",
+      "family": "signs",
+      "status": "planned",
+      "assets": [
+        {
+          "id": "signs_wooden_sign",
+          "name": "Wooden sign",
+          "description": "Original wooden sign for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "top-left",
+          "kind": "placeable",
+          "path": "public/art/signs_wooden_sign.png",
+          "canvas": {
+            "width": 32,
+            "height": 48
+          },
+          "anchor": {
+            "x": 16,
+            "y": 46,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "signs_direction_marker",
+          "name": "Direction marker",
+          "description": "Original direction marker for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "top-right",
+          "kind": "placeable",
+          "path": "public/art/signs_direction_marker.png",
+          "canvas": {
+            "width": 32,
+            "height": 48
+          },
+          "anchor": {
+            "x": 16,
+            "y": 46,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "signs_lantern_post",
+          "name": "Lantern post",
+          "description": "Original lantern post for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "bottom-left",
+          "kind": "placeable",
+          "path": "public/art/signs_lantern_post.png",
+          "canvas": {
+            "width": 32,
+            "height": 64
+          },
+          "anchor": {
+            "x": 16,
+            "y": 62,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "signs_notice_board",
+          "name": "Notice board",
+          "description": "Original notice board for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "bottom-right",
+          "kind": "placeable",
+          "path": "public/art/signs_notice_board.png",
+          "canvas": {
+            "width": 48,
+            "height": 64
+          },
+          "anchor": {
+            "x": 24,
+            "y": 62,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "id": "batch-09-barriers",
+      "family": "barriers",
+      "status": "planned",
+      "assets": [
+        {
+          "id": "barriers_horizontal_fence",
+          "name": "Horizontal fence",
+          "description": "Original horizontal fence for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "top-left",
+          "kind": "placeable",
+          "path": "public/art/barriers_horizontal_fence.png",
+          "canvas": {
+            "width": 64,
+            "height": 32
+          },
+          "anchor": {
+            "x": 32,
+            "y": 30,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "barriers_vertical_fence",
+          "name": "Vertical fence",
+          "description": "Original vertical fence for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "top-right",
+          "kind": "placeable",
+          "path": "public/art/barriers_vertical_fence.png",
+          "canvas": {
+            "width": 32,
+            "height": 64
+          },
+          "anchor": {
+            "x": 16,
+            "y": 62,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "barriers_gate",
+          "name": "Wooden gate",
+          "description": "Original wooden gate for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "bottom-left",
+          "kind": "placeable",
+          "path": "public/art/barriers_gate.png",
+          "canvas": {
+            "width": 64,
+            "height": 48
+          },
+          "anchor": {
+            "x": 32,
+            "y": 46,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "barriers_stone_wall",
+          "name": "Stone wall segment",
+          "description": "Original stone wall segment for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "bottom-right",
+          "kind": "placeable",
+          "path": "public/art/barriers_stone_wall.png",
+          "canvas": {
+            "width": 64,
+            "height": 48
+          },
+          "anchor": {
+            "x": 32,
+            "y": 46,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "id": "batch-10-buildings",
+      "family": "buildings",
+      "status": "planned",
+      "assets": [
+        {
+          "id": "buildings_cottage",
+          "name": "Village cottage",
+          "description": "Original village cottage for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "top-left",
+          "kind": "placeable",
+          "path": "public/art/buildings_cottage.png",
+          "canvas": {
+            "width": 160,
+            "height": 144
+          },
+          "anchor": {
+            "x": 80,
+            "y": 142,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "buildings_inn",
+          "name": "Village inn",
+          "description": "Original village inn for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "top-right",
+          "kind": "placeable",
+          "path": "public/art/buildings_inn.png",
+          "canvas": {
+            "width": 192,
+            "height": 160
+          },
+          "anchor": {
+            "x": 96,
+            "y": 158,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "buildings_workshop",
+          "name": "Workshop",
+          "description": "Original workshop for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "bottom-left",
+          "kind": "placeable",
+          "path": "public/art/buildings_workshop.png",
+          "canvas": {
+            "width": 160,
+            "height": 144
+          },
+          "anchor": {
+            "x": 80,
+            "y": 142,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "buildings_barn",
+          "name": "Barn",
+          "description": "Original barn for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "bottom-right",
+          "kind": "placeable",
+          "path": "public/art/buildings_barn.png",
+          "canvas": {
+            "width": 176,
+            "height": 144
+          },
+          "anchor": {
+            "x": 88,
+            "y": 142,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "id": "batch-11-structures",
+      "family": "structures",
+      "status": "planned",
+      "assets": [
+        {
+          "id": "structures_well",
+          "name": "Stone well",
+          "description": "Original stone well for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "top-left",
+          "kind": "placeable",
+          "path": "public/art/structures_well.png",
+          "canvas": {
+            "width": 80,
+            "height": 80
+          },
+          "anchor": {
+            "x": 40,
+            "y": 78,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "structures_fountain",
+          "name": "Fountain",
+          "description": "Original fountain for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "top-right",
+          "kind": "placeable",
+          "path": "public/art/structures_fountain.png",
+          "canvas": {
+            "width": 96,
+            "height": 96
+          },
+          "anchor": {
+            "x": 48,
+            "y": 94,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "structures_stone_arch",
+          "name": "Stone arch",
+          "description": "Original stone arch for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "bottom-left",
+          "kind": "placeable",
+          "path": "public/art/structures_stone_arch.png",
+          "canvas": {
+            "width": 96,
+            "height": 128
+          },
+          "anchor": {
+            "x": 48,
+            "y": 126,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "structures_wooden_bridge",
+          "name": "Wooden bridge",
+          "description": "Original wooden bridge for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "bottom-right",
+          "kind": "placeable",
+          "path": "public/art/structures_wooden_bridge.png",
+          "canvas": {
+            "width": 128,
+            "height": 64
+          },
+          "anchor": {
+            "x": 64,
+            "y": 62,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "id": "batch-12-supplies",
+      "family": "supplies",
+      "status": "planned",
+      "assets": [
+        {
+          "id": "supplies_tent",
+          "name": "Camping tent",
+          "description": "Original camping tent for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "top-left",
+          "kind": "placeable",
+          "path": "public/art/supplies_tent.png",
+          "canvas": {
+            "width": 96,
+            "height": 80
+          },
+          "anchor": {
+            "x": 48,
+            "y": 78,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "supplies_campfire",
+          "name": "Campfire",
+          "description": "Original campfire for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "top-right",
+          "kind": "placeable",
+          "path": "public/art/supplies_campfire.png",
+          "canvas": {
+            "width": 48,
+            "height": 48
+          },
+          "anchor": {
+            "x": 24,
+            "y": 46,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "supplies_barrel",
+          "name": "Barrel",
+          "description": "Original barrel for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "bottom-left",
+          "kind": "placeable",
+          "path": "public/art/supplies_barrel.png",
+          "canvas": {
+            "width": 32,
+            "height": 48
+          },
+          "anchor": {
+            "x": 16,
+            "y": 46,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "supplies_crate",
+          "name": "Crate",
+          "description": "Original crate for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "bottom-right",
+          "kind": "placeable",
+          "path": "public/art/supplies_crate.png",
+          "canvas": {
+            "width": 48,
+            "height": 48
+          },
+          "anchor": {
+            "x": 24,
+            "y": 46,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "id": "batch-13-furniture",
+      "family": "furniture",
+      "status": "planned",
+      "assets": [
+        {
+          "id": "furniture_table",
+          "name": "Wooden table",
+          "description": "Original wooden table for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "top-left",
+          "kind": "placeable",
+          "path": "public/art/furniture_table.png",
+          "canvas": {
+            "width": 64,
+            "height": 48
+          },
+          "anchor": {
+            "x": 32,
+            "y": 46,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "furniture_chair",
+          "name": "Chair",
+          "description": "Original chair for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "top-right",
+          "kind": "placeable",
+          "path": "public/art/furniture_chair.png",
+          "canvas": {
+            "width": 32,
+            "height": 48
+          },
+          "anchor": {
+            "x": 16,
+            "y": 46,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "furniture_bed",
+          "name": "Bed",
+          "description": "Original bed for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "bottom-left",
+          "kind": "placeable",
+          "path": "public/art/furniture_bed.png",
+          "canvas": {
+            "width": 64,
+            "height": 80
+          },
+          "anchor": {
+            "x": 32,
+            "y": 78,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "furniture_wardrobe",
+          "name": "Wardrobe",
+          "description": "Original wardrobe for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "bottom-right",
+          "kind": "placeable",
+          "path": "public/art/furniture_wardrobe.png",
+          "canvas": {
+            "width": 64,
+            "height": 96
+          },
+          "anchor": {
+            "x": 32,
+            "y": 94,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "id": "batch-14-dungeon-props",
+      "family": "dungeon-props",
+      "status": "planned",
+      "assets": [
+        {
+          "id": "dungeon_props_chest",
+          "name": "Treasure chest",
+          "description": "Original treasure chest for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "top-left",
+          "kind": "placeable",
+          "path": "public/art/dungeon_props_chest.png",
+          "canvas": {
+            "width": 48,
+            "height": 40
+          },
+          "anchor": {
+            "x": 24,
+            "y": 38,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "dungeon_props_pillar",
+          "name": "Stone pillar",
+          "description": "Original stone pillar for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "top-right",
+          "kind": "placeable",
+          "path": "public/art/dungeon_props_pillar.png",
+          "canvas": {
+            "width": 48,
+            "height": 96
+          },
+          "anchor": {
+            "x": 24,
+            "y": 94,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "dungeon_props_brazier",
+          "name": "Brazier",
+          "description": "Original brazier for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "bottom-left",
+          "kind": "placeable",
+          "path": "public/art/dungeon_props_brazier.png",
+          "canvas": {
+            "width": 48,
+            "height": 64
+          },
+          "anchor": {
+            "x": 24,
+            "y": 62,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "dungeon_props_altar",
+          "name": "Ancient altar",
+          "description": "Original ancient altar for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "bottom-right",
+          "kind": "placeable",
+          "path": "public/art/dungeon_props_altar.png",
+          "canvas": {
+            "width": 96,
+            "height": 64
+          },
+          "anchor": {
+            "x": 48,
+            "y": 62,
+            "meaning": "trunk-foot/ground contact"
+          },
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "id": "batch-15-ground-terrain",
+      "family": "ground-terrain",
+      "status": "planned",
+      "assets": [
+        {
+          "id": "ground_terrain_grass",
+          "name": "Grass tile",
+          "description": "Original grass tile for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "top-left",
+          "kind": "seamless_tile",
+          "path": "public/art/ground_terrain_grass.png",
+          "canvas": {
+            "width": 16,
+            "height": 16
+          },
+          "anchor": {
+            "x": 0,
+            "y": 0,
+            "meaning": "top-left"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "ground_terrain_dirt",
+          "name": "Dirt tile",
+          "description": "Original dirt tile for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "top-right",
+          "kind": "seamless_tile",
+          "path": "public/art/ground_terrain_dirt.png",
+          "canvas": {
+            "width": 16,
+            "height": 16
+          },
+          "anchor": {
+            "x": 0,
+            "y": 0,
+            "meaning": "top-left"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "ground_terrain_sand",
+          "name": "Sand tile",
+          "description": "Original sand tile for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "bottom-left",
+          "kind": "seamless_tile",
+          "path": "public/art/ground_terrain_sand.png",
+          "canvas": {
+            "width": 16,
+            "height": 16
+          },
+          "anchor": {
+            "x": 0,
+            "y": 0,
+            "meaning": "top-left"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "ground_terrain_stone",
+          "name": "Stone tile",
+          "description": "Original stone tile for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "bottom-right",
+          "kind": "seamless_tile",
+          "path": "public/art/ground_terrain_stone.png",
+          "canvas": {
+            "width": 16,
+            "height": 16
+          },
+          "anchor": {
+            "x": 0,
+            "y": 0,
+            "meaning": "top-left"
+          },
+          "status": "planned"
+        }
+      ]
+    },
+    {
+      "id": "batch-16-additional-terrain",
+      "family": "additional-terrain",
+      "status": "planned",
+      "assets": [
+        {
+          "id": "additional_terrain_moss",
+          "name": "Moss tile",
+          "description": "Original moss tile for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "top-left",
+          "kind": "seamless_tile",
+          "path": "public/art/additional_terrain_moss.png",
+          "canvas": {
+            "width": 16,
+            "height": 16
+          },
+          "anchor": {
+            "x": 0,
+            "y": 0,
+            "meaning": "top-left"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "additional_terrain_snow",
+          "name": "Snow tile",
+          "description": "Original snow tile for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "top-right",
+          "kind": "seamless_tile",
+          "path": "public/art/additional_terrain_snow.png",
+          "canvas": {
+            "width": 16,
+            "height": 16
+          },
+          "anchor": {
+            "x": 0,
+            "y": 0,
+            "meaning": "top-left"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "additional_terrain_cobblestone",
+          "name": "Cobblestone tile",
+          "description": "Original cobblestone tile for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "bottom-left",
+          "kind": "seamless_tile",
+          "path": "public/art/additional_terrain_cobblestone.png",
+          "canvas": {
+            "width": 16,
+            "height": 16
+          },
+          "anchor": {
+            "x": 0,
+            "y": 0,
+            "meaning": "top-left"
+          },
+          "status": "planned"
+        },
+        {
+          "id": "additional_terrain_wood_floor",
+          "name": "Wood flooring tile",
+          "description": "Original wood flooring tile for a polished top-down fantasy pixel RPG; coherent 16-bit-inspired style, elevated three-quarter perspective, intentional crisp pixel clusters.",
+          "quadrant": "bottom-right",
+          "kind": "seamless_tile",
+          "path": "public/art/additional_terrain_wood_floor.png",
+          "canvas": {
+            "width": 16,
+            "height": 16
+          },
+          "anchor": {
+            "x": 0,
+            "y": 0,
+            "meaning": "top-left"
+          },
+          "status": "planned"
+        }
+      ]
+    }
+  ]
+}
