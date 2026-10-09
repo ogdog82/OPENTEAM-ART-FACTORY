@@ -1,31 +1,25 @@
-# OPENTEAM ART FACTORY — single-batch role-isolation and artifact-transfer pilot
-# Paste the body below into OpenTeam's Orchestration Task field.
+# OpenTeam Art Factory — GitHub artifact handoff (Batch 01)
 
+Paste the following into OpenTeam's Orchestration Task. First enable OpenTeam Options → Art Factory GitHub using a fine-grained token scoped to this repository with Contents: Read and write. Never put tokens in an agent prompt.
+
+OPENTEAM ART FACTORY — GITHUB HANDOFF PILOT
 ARTIFACT_BRIDGE: ON
-
 Repository: https://github.com/ogdog82/OPENTEAM-ART-FACTORY
 Branch: main
 Batch: batch-01-broadleaf-trees
-Stop after Batch 01 completes; do not run the other 15 batches.
 
-Six-node graph using four people:
-PREPARER (execution) → GENERATOR (execution) → GENERATION REVIEW (EXTRACTOR) → EXTRACTOR (execution) → EXTRACTION REVIEW (UPLOADER) → UPLOADER (execution).
-Generation review FAIL → GENERATOR; extraction review FAIL → EXTRACTOR. Max 2 review attempts per gate; stop on exhaustion. Max 20 node executions.
+Preserve the six-node graph: PREPARER → GENERATOR → GENERATION REVIEW (EXTRACTOR) → EXTRACTOR → EXTRACTION REVIEW (UPLOADER) → UPLOADER. Generation quality FAIL returns to GENERATOR; extraction quality FAIL returns to EXTRACTOR. Max two review attempts per gate. Run only Batch 01.
 
-ROLE ISOLATION IS NON-NEGOTIABLE. Each worker receives only its input and may perform only its assigned job. Do not tell all four chats to read GitHub.
+PREPARER reads art/queue.json, art/STYLE.md and art/PROMPT_CRAFT_GUIDE.md; crafts one complete, highly polished image-only 2×2 generation prompt. No technical JSON is needed; OpenTeam reads specifications directly from GitHub.
 
-1. PREPARER: **Only PREPARER reads** `art/queue.json`, `art/STYLE.md`, and `art/PROMPT_CRAFT_GUIDE.md` to choose Batch 01's four assets. PREPARER is accountable for art-directing the prompt: use GitHub's exact asset identity and style rules, maintain strong cross-batch visual consistency, and specify clean separable silhouettes/background without burying the image model in irrelevant technical details. Critically assess the prompt before handoff. Produce exactly two distinct outputs:
-   - GENERATION_PROMPT: one fully self-contained short, artistic prompt requesting a NEW 2x2 image containing oak (top-left), ash (top-right), birch (bottom-left), maple (bottom-right), with cohesive professional pixel-art style, clearly separated silhouettes and an extraction-friendly background. Do not mention GitHub, placeholders, filenames, dimensions, anchors, extraction, editing, uploading, or workflow in the image prompt. Send the exact prompt text directly to GENERATOR—never a GitHub link or filename.
-   - BATCH_SPEC: the four exact asset IDs, requested paths, canvas dimensions, anchor coordinates, quadrant order, and extraction constraints from the queue. Send this separately to EXTRACTOR and UPLOADER through the orchestrator's task context/handoff. If the orchestrator cannot deliver it to those nodes, stop and report BLOCKED_SPEC_HANDOFF. Do not leak technical spec or repository tasks into GENERATOR's message.
+GENERATOR receives only visual instructions, generates ONE new image using ChatGPT image generation, and displays the result. OpenTeam captures the image and stages the original pixels under art/incoming/<run-id>/generated/. GENERATOR does not read/write GitHub or upload files.
 
-2. GENERATOR: Receive PREPARER's final GENERATION_PROMPT verbatim; do not improve, research, or rewrite it. Operate only on that prompt. Create a **brand-new image from text** using native ChatGPT image generation. Do not retrieve anything from GitHub, inspect placeholders, follow GitHub links, or do any extraction/upload. Transfer actual image bytes to EXTRACTOR/generation review. If the tool refuses creation, report BLOCKED_GENERATION with its real error; do not invent an explanation. If image bytes cannot be transferred, report BLOCKED_TRANSPORT. Quality feedback from EXTRACTOR returns here for regeneration.
+GENERATION REVIEW (EXTRACTOR) downloads and visually inspects the exact GitHub source image, returning real PASS/FAIL. If it cannot open the image, report BLOCKED_TRANSPORT.
 
-3. GENERATION REVIEW (EXTRACTOR): Open the actual generated image and read BATCH_SPEC from PREPARER handoff. Inspect four subjects, matching quadrants, strong art, consistent pixel style, silhouettes, spacing, suitability for reduction. PASS to EXTRACTOR only if source is genuinely acceptable; art-quality FAIL returns to GENERATOR with at most 3 corrections. If image bytes or BATCH_SPEC are inaccessible, stop with BLOCKED_TRANSPORT or BLOCKED_SPEC_HANDOFF instead of pretending to review.
+EXTRACTOR downloads the approved source from its GitHub URL; uses Python/Pillow to produce four separately named transparent PNGs with exact canvas/anchor specifications. Display/attach all four individual PNGs in the reply with matching filename alt text so OpenTeam can capture them. ZIP-only/text-only outputs are not sufficient; EXTRACTOR must not commit files.
 
-4. EXTRACTOR: With actual image and BATCH_SPEC, execute Python/Pillow to produce four separately named transparent PNGs of the exact requested canvas sizes and ground anchors. Preserve the accepted artwork and visually inspect the native-sized sprites. Hand the actual four PNG files to UPLOADER/extraction review. Do not access GitHub or alter any queue. Missing bytes = BLOCKED_TRANSPORT.
+EXTRACTION REVIEW (UPLOADER) downloads and inspects the four staged PNGs under art/incoming/<run-id>/extracted/. Real conversion-quality FAIL returns to EXTRACTOR. Missing bytes are BLOCKED_TRANSPORT, not artistic failure.
 
-5. EXTRACTION REVIEW (UPLOADER): Open all four actual PNG files and check identity, exact filenames, dimensions, real alpha, clean edges, good aesthetics, proportionality and anchors. PASS only with inspectable pixels; otherwise FAIL back to EXTRACTOR with at most 3 repair instructions. File transfer issues = BLOCKED_TRANSPORT.
+After extraction review PASS, OpenTeam uploads four validated PNGs to public/art/ and updates art/queue.json to approved. UPLOADER's final node audits actual file/commit URLs and reports results; no duplicate upload is needed.
 
-6. UPLOADER: Only after PASS, read GitHub to verify Batch 01 destination paths and specs, then replace exactly the four placeholder PNGs, update statuses to approved in `art/queue.json`, commit and verify the resulting paths. Report real commit URL. Do not create/edit art or modify gameplay. STOP.
-
-Important: GitHub URL and path in THIS controller task are for PREPARER and UPLOADER only. The orchestrator MUST NOT copy these controller instructions wholesale into GENERATOR's image-generation prompt.
+Do not refresh agent chat windows, resend prompts, or transfer binary files between agent conversations. No other OpenTeam workflow is modified.
