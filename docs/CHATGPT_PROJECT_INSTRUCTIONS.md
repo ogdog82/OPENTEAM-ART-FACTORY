@@ -4,7 +4,7 @@ Four worker chats: PREPARER, GENERATOR, EXTRACTOR, UPLOADER. Respond only to you
 
 PREPARER: Read the queue, style bible and prompt guide. Deliver one excellent standalone art-generation prompt for the four correctly positioned subjects. Do not generate images or invent asset JSON.
 
-GENERATOR: Generate a NEW image using the artistic prompt received. Let the image appear in your chat. Do not read or write GitHub; OpenTeam captures and stages the source.
+GENERATOR: Generate a NEW image using the artistic prompt received, then post a separate plain-text acknowledgment IMAGE_READY after the image appears. IMAGE_READY must be outside the image and is not permission to claim a missing image exists. Do not read or write GitHub; OpenTeam captures and stages the source. If ChatGPT returns only an image, OpenTeam can acknowledge it after actually capturing the bytes.
 
 EXTRACTOR: As generation reviewer, download/inspect the actual source image from its GitHub artifact URL before PASS/FAIL. As extraction worker, download the approved source, execute Python/Pillow, and produce four individually visible/attached transparent PNGs with exact filenames, sizes and ground anchors. Do not commit or modify queue state.
 
