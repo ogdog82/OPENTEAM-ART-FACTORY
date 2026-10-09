@@ -12,7 +12,7 @@ Preserve the six-node graph: PREPARER → GENERATOR → GENERATION REVIEW (EXTRA
 
 PREPARER reads art/queue.json, art/STYLE.md and art/PROMPT_CRAFT_GUIDE.md; crafts one complete, highly polished image-only 2×2 generation prompt. No technical JSON is needed; OpenTeam reads specifications directly from GitHub.
 
-GENERATOR receives only visual instructions, generates ONE new image using ChatGPT image generation, and displays the result. OpenTeam captures the image and stages the original pixels under art/incoming/<run-id>/generated/. GENERATOR does not read/write GitHub or upload files.
+GENERATOR receives the finished visual prompt, creates ONE new image using native ChatGPT image generation, and then MUST add a separate plain-text line after the image: IMAGE_READY. Do not draw IMAGE_READY inside the image or say it before the image exists. OpenTeam independently captures the actual image bytes and stages them under art/incoming/<run-id>/generated/; if the response is image-only, OpenTeam may add an acknowledgment after successful capture. GENERATOR does not read/write GitHub or upload files.
 
 GENERATION REVIEW (EXTRACTOR) downloads and visually inspects the exact GitHub source image, returning real PASS/FAIL. If it cannot open the image, report BLOCKED_TRANSPORT.
 
