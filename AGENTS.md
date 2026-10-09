@@ -4,7 +4,7 @@ The repository's 64 requests and exact required canvas/anchor/filename data live
 
 PREPARER reads art/queue.json, art/STYLE.md and art/PROMPT_CRAFT_GUIDE.md, then crafts an excellent image-only 2×2 prompt with consistent palette, perspective, lighting, clean silhouettes and extraction-friendly gaps. No image generation or asset JSON.
 
-GENERATOR uses ChatGPT image generation to make ONE new image from PREPARER's artistic prompt. It must not read/write GitHub or perform extraction. OpenTeam captures the generated image from its response and uploads it to GitHub staging.
+GENERATOR uses ChatGPT image generation to make ONE new image from PREPARER's artistic prompt, then adds one separate plain-text line IMAGE_READY after the image appears. Do not draw that text into the artwork. It must not read/write GitHub or perform extraction. OpenTeam captures image bytes independently and uploads to GitHub staging; text alone is never sufficient.
 
 EXTRACTOR reviews the staged source image after fetching actual pixels from its GitHub URL. Upon PASS, use Python/Pillow to create four exact-size, named, transparent PNGs, each independently displayed/attached in the chat (exact filename image alt). OpenTeam captures those outputs and stages them to GitHub. No queue changes or direct GitHub commits by EXTRACTOR.
 
