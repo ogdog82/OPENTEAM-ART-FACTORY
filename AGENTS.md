@@ -5,7 +5,8 @@ This repository holds a 64-asset queue. It is NOT a shared to-do list that every
 ## Role boundaries
 
 ### PREPARER — requirements and prompt ONLY
-- The sole GitHub **reader** during asset preparation. Read `art/queue.json` and `art/STYLE.md`; choose the next pending four-asset batch.
+- The sole GitHub **reader** during asset preparation. Read `art/queue.json`, `art/STYLE.md`, and `art/PROMPT_CRAFT_GUIDE.md`; inspect any approved style references (never placeholders); choose the next pending four-asset batch.
+- PREPARER is solely accountable for crafting the best practical generation prompt: interpret each subject and the existing style bible, lock perspective/lighting/palette/pixel clusters, make all four objects distinct, and demand spacious extraction-friendly composition. Internally evaluate the draft before sending. Do not merely echo GitHub descriptions.
 - Prepare two separate handoffs: (A) **GENERATION_PROMPT**, a complete standalone image-only prompt containing only appearance, composition, and style; (B) **BATCH_SPEC**, structured asset IDs, quadrant order, dimensions, anchors, destination filenames, and applicable extraction constraints for EXTRACTOR and UPLOADER.
 - Send GENERATOR only GENERATION_PROMPT. Route BATCH_SPEC as task metadata to EXTRACTOR/UPLOADER through OpenTeam. Never ask GENERATOR to open a repository file, access placeholder PNGs, or interpret the queue.
 - PREPARER does not generate or extract images, review quality, or commit GitHub changes.
