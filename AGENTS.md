@@ -1,13 +1,15 @@
-# OpenTeam Art Factory — GitHub artifact transport
+# OpenTeam Art Factory — agent cooperation and file transport
 
-The repository's 64 requests and exact required canvas/anchor/filename data live in art/queue.json. The OpenTeam extension stages generated and extracted images under art/incoming/<run-id>/ and promotes approved PNGs to public/art/. No AI-authored technical JSON or agent-to-agent binary upload is required.
+The canonical 64-asset queue, exact output paths, canvases and anchors are in art/queue.json. The four workers remain PREPARER, GENERATOR, EXTRACTOR and UPLOADER, with EXTRACTOR and UPLOADER also serving as review agents. Work on pilot Batch 01 only until approved.
 
-PREPARER reads art/queue.json, art/STYLE.md and art/PROMPT_CRAFT_GUIDE.md, then crafts an excellent image-only 2×2 prompt with consistent palette, perspective, lighting, clean silhouettes and extraction-friendly gaps. No image generation or asset JSON.
+Agents may use their available tools, including GitHub and Python, to perform their assigned stage. There are no arbitrary tool prohibitions or exclusive communication modes. Real file bytes and genuine review decisions, not a claimed attachment or URL, determine whether the orchestration advances.
 
-GENERATOR uses ChatGPT image generation to make ONE new image from PREPARER's artistic prompt, then adds one separate plain-text line IMAGE_READY after the image appears. Do not draw that text into the artwork. It must not read/write GitHub or perform extraction. OpenTeam captures image bytes independently and uploads to GitHub staging; text alone is never sufficient.
+PREPARER: Read queue/style/prompt guide and craft a cohesive original 2×2 pixel-art prompt. The extension fetches technical specifications from the real GitHub queue.
 
-EXTRACTOR reviews the staged source image after fetching actual pixels from its GitHub URL. Upon PASS, use Python/Pillow to create four exact-size, named, transparent PNGs, each independently displayed/attached in the chat (exact filename image alt). OpenTeam captures those outputs and stages them to GitHub. No queue changes or direct GitHub commits by EXTRACTOR.
+GENERATOR: Create one new original image. On OpenTeam's subsequent message in the SAME chat, export that existing image as source.png without regenerating. The extension separately attempts to checkpoint original image pixels in the authenticated Chrome frame. If GitHub access is available, the agent may upload the actual PNG to art/incoming/<prompt-id>/generated/source.png and return its verified URL; an actual PNG attachment is also acceptable. A sandbox link alone is not proof of accessible image data.
 
-UPLOADER reviews all four staged PNG files after fetching actual pixels. Quality FAIL returns to EXTRACTOR. After PASS, the extension performs final PNG publication and queue approval; UPLOADER verifies the committed results and reports URLs rather than uploading files again.
+EXTRACTOR: As generation reviewer, open the current GitHub source pixels before PASS/FAIL. As production agent, use real source pixels and Python/Pillow to make four distinct transparent PNGs meeting the queue's contracts. The four images may be captured from individually rendered PNGs, or uploaded by the agent to art/incoming/<run-id>/extracted/<filename>; OpenTeam verifies real GitHub bytes and dimensions either way.
 
-Six stages: PREPARER → GENERATOR → GENERATION REVIEW (EXTRACTOR) → EXTRACTOR → EXTRACTION REVIEW (UPLOADER) → UPLOADER. Two review attempts max, pilot Batch 01 only. Missing real image bytes = BLOCKED_TRANSPORT. Enable only via ARTIFACT_BRIDGE: ON plus OPENTEAM ART FACTORY; other workflows stay unchanged. No forced browser reloads, no cross-chat binary attachments, no credentials in prompts.
+UPLOADER: As extraction reviewer, inspect all four actual GitHub PNGs before PASS. After PASS, OpenTeam publishes the accepted files to public/art and approves the queue; the UPLOADER audits the final results and may report actionable discrepancies.
+
+Six stages: PREPARER → GENERATOR → GENERATION REVIEW (EXTRACTOR) → EXTRACTOR → EXTRACTION REVIEW (UPLOADER) → UPLOADER. Artistic FAIL returns to the producing stage with at most two quality-review attempts per gate. Missing files/bytes = BLOCKED_TRANSPORT and must not be counted as a creative failure. Keep tokens private. The extension must not transfer binary blobs directly between agent conversations or disturb other OpenTeam workflows.
