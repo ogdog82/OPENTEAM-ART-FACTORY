@@ -1,16 +1,15 @@
 # OPENTEAM ART FACTORY
 
-A standalone four-agent production pilot for **64 reusable pixel-RPG assets**, specified in [art/queue.json](art/queue.json) (16 batches of 4).
+Independent four-agent production pilot for **64 reusable pixel-RPG assets**, specified in [art/queue.json](art/queue.json) (16 batches of 4).
 
-**Roles:** PREPARER → GENERATOR → GENERATION REVIEW by EXTRACTOR → EXTRACTOR → EXTRACTION REVIEW by UPLOADER → UPLOADER.
+**STRICT role separation:** PREPARER reads the queue and creates prompts → GENERATOR only generates a new image from the supplied prompt → EXTRACTOR only judges generated art and processes source pixels to four PNGs → UPLOADER only reviews extracted PNGs and commits approved files to GitHub.
 
-## Start here
+- [Asset queue](art/queue.json) — 64 requests, with Batch 01 pending.
+- [Art style](art/STYLE.md) — read by PREPARER, not GENERATOR.
+- [Agent boundaries](AGENTS.md) — distinct file-access and handoff responsibilities.
+- [OpenTeam orchestration task](docs/ORCHESTRATION_TASK.md) — controller and node duties.
+- [Project instructions](docs/CHATGPT_PROJECT_INSTRUCTIONS.md) — role-isolating shared ChatGPT Project instructions.
+- [Transport contract](docs/TRANSPORT.md) — verified binary handoff requirement.
+- [Placeholder creation tool](tools/make_placeholders.py) — optional creation of missing future placeholders.
 
-- [Batch and asset queue](art/queue.json) — 64 detailed requests, exact PNG paths/dimensions/anchors. **Batch 01 is pending.**
-- [Pixel-art style](art/STYLE.md) — consistent production requirements.
-- [Orchestration task](docs/ORCHESTRATION_TASK.md) — paste into OpenTeam's task field.
-- [Project instructions](docs/CHATGPT_PROJECT_INSTRUCTIONS.md) — paste into the ChatGPT Art Factory Project.
-- [Artifact handoff guide](docs/TRANSPORT.md) — required real image transfers.
-- [Placeholder generator](tools/make_placeholders.py) — generates missing placeholders for future batches.
-
-**Four real placeholder PNGs are committed under `public/art/` for the first batch** (oak, ash, birch and maple). The next 60 requests are planned, and their placeholders can be seeded only when ready. First pilot must stop after Batch 01 is committed. No other game repository is used.
+Four actual placeholder PNGs already exist in `public/art/` for Batch 01 (oak, ash, birch, maple). The remaining 60 requests are planned and not ready for production. The pilot ends after these four replacements are committed successfully. No other game repository or orchestrator configuration is touched.

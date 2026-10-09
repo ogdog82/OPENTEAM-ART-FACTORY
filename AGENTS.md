@@ -1,13 +1,37 @@
-# OpenTeam four-person art factory
+# OpenTeam art factory — strict separation of duties
 
-Read `art/queue.json` and `art/STYLE.md` on each fresh OpenTeam chat's first task. Queue is the authoritative batch/asset register.
+This repository holds a 64-asset queue. It is NOT a shared to-do list that every participant must read. The OpenTeam orchestrator supplies each person only what their role requires.
 
-PREPARER: select the first pending batch (batch 01 only for pilot) and make one short high-quality 2x2 generation prompt. Pass batch ID, descriptions and technical requirements onward.
+## Role boundaries
 
-GENERATOR: request a **brand-new text-to-image creation**. Do not supply, open, or attach any existing placeholder PNG, old asset sheet, or repository artwork as a source image during Batch 01. Use a self-contained visual-only prompt; do not frame the request as an image edit, replacement, reference-based transformation, or crop. For a mode-classification tool error, retry once using `art/prompts/batch-01-fresh-image.txt` verbatim in a clean generator turn, with no prior image attached. If the same error recurs, report BLOCKED_GENERATION (not BLOCKED_TRANSPORT) with the actual error. Upon success, transfer original image BYTES to EXTRACTOR; if transfer fails report BLOCKED_TRANSPORT.
+### PREPARER — requirements and prompt ONLY
+- The sole GitHub **reader** during asset preparation. Read `art/queue.json` and `art/STYLE.md`; choose the next pending four-asset batch.
+- Prepare two separate handoffs: (A) **GENERATION_PROMPT**, a complete standalone image-only prompt containing only appearance, composition, and style; (B) **BATCH_SPEC**, structured asset IDs, quadrant order, dimensions, anchors, destination filenames, and applicable extraction constraints for EXTRACTOR and UPLOADER.
+- Send GENERATOR only GENERATION_PROMPT. Route BATCH_SPEC as task metadata to EXTRACTOR/UPLOADER through OpenTeam. Never ask GENERATOR to open a repository file, access placeholder PNGs, or interpret the queue.
+- PREPARER does not generate or extract images, review quality, or commit GitHub changes.
 
-EXTRACTOR: review real generated image quality; FAIL to GENERATOR for artistic errors. On PASS, execute Python/Pillow and produce four genuine transparent native-resolution PNGs at exact queue filenames and canvases. Transfer real files and preview to UPLOADER; if missing bytes report BLOCKED_TRANSPORT. Terrain requires seamless tiling tests.
+### GENERATOR — image generation ONLY
+- Receive the fully formed GENERATION_PROMPT directly from PREPARER in the current message.
+- Generate **one NEW image from text** using ChatGPT's image generation; the four assets must be in the prompt's specified positions.
+- Hand off the actual original image to EXTRACTOR (or its review node) using the opt-in binary bridge.
+- On art-quality FAIL, use the review feedback to regenerate. On a mode/tool error, report BLOCKED_GENERATION with the exact error rather than guessing its cause.
+- **Never read or write GitHub. Never fetch a prompt from a file. Never inspect placeholder PNGs, specifications, paths, sizes, anchors, source code, or queue state. Never extract PNGs or publish them.**
+- If a source image is missing, report BLOCKED_GENERATION; if produced but not transferable, report BLOCKED_TRANSPORT.
 
-UPLOADER: independently review actual four PNGs (not just claims) for identity, clean edges, alpha, art quality, exact dimensions, anchors, and tile repeatability. FAIL to EXTRACTOR if defective. On PASS replace the four existing placeholder paths, update batch and individual asset statuses in `art/queue.json`, commit one batch, and report GitHub commit URL.
+### EXTRACTOR — source review and pixel processing ONLY
+- Receive generated **image bytes** plus BATCH_SPEC from the orchestration handoff. Do not fetch asset requirements from GitHub; if BATCH_SPEC is missing report BLOCKED_SPEC_HANDOFF.
+- Judge generation quality and return artistic failures to GENERATOR. On PASS use Python/Pillow to create four exact-size, correctly named transparent PNGs preserving the generated art. Inspect quality and transfer actual files to UPLOADER.
+- Never generate substitute art or commit to GitHub. No queue/status edits. Failure to receive bytes = BLOCKED_TRANSPORT.
 
-Initial pilot only: DO NOT start next batch automatically. Keep retries to 2 per review gate. Preserve other games and older OpenTeam orchestrations; use this pipeline only with explicit `ARTIFACT_BRIDGE: ON` in the Art Factory orchestration task. Do not fill this repo with failed generated sources, redundant logs or checksum manifests.
+### UPLOADER — final quality and Git publication ONLY
+- Receive four actual final PNGs and BATCH_SPEC. Independently inspect art quality, dimensions, alpha, anchor, filenames; return conversion failures to EXTRACTOR.
+- Only after review PASS, read GitHub to check the current exact paths/specs and commit accepted final PNG replacements. Update `art/queue.json` status, and verify publication.
+- Never generate images, modify extraction output, or prepare prompts.
+
+## Orchestration
+
+PREPARER → GENERATOR → GENERATION REVIEW (EXTRACTOR) → EXTRACTOR → EXTRACTION REVIEW (UPLOADER) → UPLOADER.
+
+Review FAIL returns to its immediately preceding worker. Two review attempts max; stop on exhausted budget. Batch 01 only until binary transfer and publication both pass. Activate binary forwarding only when `ARTIFACT_BRIDGE: ON` is in this factory task, never in the separate Lantern Vale group.
+
+A file path, download link inaccessible to the recipient, or claim of success is NOT a binary transfer. Avoid costly integrity ceremony; judge actual functioning and visual quality.
