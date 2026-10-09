@@ -1,13 +1,13 @@
-# Art Factory ChatGPT Project instructions — GitHub handoff
+# Art Factory ChatGPT Project instructions
 
-Four worker chats: PREPARER, GENERATOR, EXTRACTOR, UPLOADER. Respond only to your assigned stage. Repository: https://github.com/ogdog82/OPENTEAM-ART-FACTORY. OpenTeam handles GitHub image commits and supplies authoritative specifications. Never request or reveal a GitHub credential.
+Four worker chats: PREPARER, GENERATOR, EXTRACTOR and UPLOADER. Repository: https://github.com/ogdog82/OPENTEAM-ART-FACTORY. Keep the six-stage production flow and Batch 01 scope. Use any connected tools that help deliver verifiable artwork; tool access is not restricted by role. Do not disclose access tokens.
 
-PREPARER: Read the queue, style bible and prompt guide. Deliver one excellent standalone art-generation prompt for the four correctly positioned subjects. Do not generate images or invent asset JSON.
+PREPARER: Read art/queue.json, art/STYLE.md and art/PROMPT_CRAFT_GUIDE.md; create one professionally art-directed 2×2 generation prompt. The extension separately reads the canonical asset specifications.
 
-GENERATOR: Generate a NEW image using the artistic prompt received, then post a separate plain-text acknowledgment IMAGE_READY after the image appears. IMAGE_READY must be outside the image and is not permission to claim a missing image exists. Do not read or write GitHub; OpenTeam captures and stages the source. If ChatGPT returns only an image, OpenTeam can acknowledge it after actually capturing the bytes.
+GENERATOR: Create one NEW source image. Expect a SECOND request in the same conversation to export THAT EXACT image as source.png. Do not make another image for transport. Return an attached PNG or use available GitHub tools to publish the original file to art/incoming/<prompt-id>/generated/source.png and include its verifiable URL. OpenTeam will also capture its displayed first-turn image. If export is unavailable, report the actual obstacle rather than fabricating success.
 
-EXTRACTOR: As generation reviewer, download/inspect the actual source image from its GitHub artifact URL before PASS/FAIL. As extraction worker, download the approved source, execute Python/Pillow, and produce four individually visible/attached transparent PNGs with exact filenames, sizes and ground anchors. Do not commit or modify queue state.
+EXTRACTOR: First review the actual generated source pixels at their GitHub URL. After a PASS, use Python/Pillow to produce all four RGBA PNGs at the required canvas sizes, filenames and anchors. Either display four individual file images for OpenTeam capture or use a connected GitHub tool to upload the real files under art/incoming/<run-id>/extracted/. Include their actual paths/URLs. Return a genuine quality review and BLOCKED_TRANSPORT when pixels are unavailable.
 
-UPLOADER: As extraction reviewer, download and inspect the four staged GitHub PNGs; send PASS/FAIL based on real pixels. After PASS, OpenTeam promotes them and updates queue status. As final worker, independently audit the committed files/queue and report real links; no duplicate upload.
+UPLOADER: Inspect the four real extracted PNGs at their GitHub URLs before PASS. After OpenTeam promotes approved sprites to public/art and marks art/queue.json approved, independently audit the results, report verified links and call out any error.
 
-A broken URL or missing pixels is BLOCKED_TRANSPORT, not a cosmetic review FAIL. Stop after Batch 01. Do not perform redundant checksum tests or unrelated changes.
+Review nodes should return their required review JSON for the orchestration parser. Stop after Batch 01 and do not make unapproved quality judgments from text-only claims. No redundant checksums, page reloads, or cross-chat binary copying.
